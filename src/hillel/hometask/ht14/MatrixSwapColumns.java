@@ -17,7 +17,6 @@ public class MatrixSwapColumns {
 
         arr = createArray(arr, arrRowsCount, arrColumnsCount);
 
-        //swap columns
         System.out.println();
         arr = swapArrayColumns(arr, arrRowsCount, arrColumnsCount);
         System.out.println("Array with swapped columns: ");

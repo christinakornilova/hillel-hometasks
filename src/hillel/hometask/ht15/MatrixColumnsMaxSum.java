@@ -21,7 +21,6 @@ public class MatrixColumnsMaxSum {
 
         arr = ArrayLib.createArray(arr, arrRowsCount, arrColumnsCount);
 
-        //get sum
         for (int j = 0; j < arrColumnsCount; j++) {
             sumArr[j] = ArrayLib.getArrayColumnsSum(arr, j, arrRowsCount);
         }
