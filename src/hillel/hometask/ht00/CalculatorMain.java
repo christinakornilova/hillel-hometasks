@@ -3,11 +3,11 @@
 число заново и пользователь вводил операцию (+-* /)
 */
 
-package hillel.hometask.zero;
+package hillel.hometask.ht00;
 
 
 import hillel.hometask.utils.CalcLib;
-import hillel.hometask.utils.Input;
+import hillel.hometask.utils.InputLib;
 
 public class CalculatorMain {
 
@@ -15,12 +15,12 @@ public class CalculatorMain {
 
         try {
 
-            String operation="";
-            double op1=0, op2=0;
+            String operation;
+            double op1, op2;
 
-            op1 = Input.operandInput("first");
-            op2 = Input.operandInput("second");
-            operation = Input.operationInput(operation);
+            op1 = InputLib.operandInput("first");
+            op2 = InputLib.operandInput("second");
+            operation = InputLib.operationInput("InputLib operation (+, -, *, /, %):");
 
             switch (operation) {
                 case "+": {

@@ -25,11 +25,17 @@ public class CalcLib {
         }
     }
 
+    public static boolean isPositive(String x)
+    {
+        try {
+            return (Integer.parseInt(x) > 0);
+        } catch(Exception e) {
+            return false;
+        }
+    }
+
     public static double roundResult (double d) {
-
-        double newDouble = new BigDecimal(d).setScale(4, RoundingMode.HALF_UP).doubleValue();
-        return newDouble;
-
+        return new BigDecimal(d).setScale(4, RoundingMode.HALF_UP).doubleValue();
     }
 
     public static boolean divisionByZero(double a, double b){

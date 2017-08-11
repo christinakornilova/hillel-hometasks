@@ -3,17 +3,17 @@
 2. Программа, которая находит среднее арифметическое значение произвольного количества чисел.
  */
 
-package hillel.hometask.one;
+package hillel.hometask.ht01;
 
 import hillel.hometask.utils.CalcLib;
-import hillel.hometask.utils.Input;
+import hillel.hometask.utils.InputLib;
 
 import java.util.Scanner;
 
 public class Average {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String s = "";
+        String s;
         double op1, op2, avg;
 
         int count;
@@ -23,12 +23,12 @@ public class Average {
         s = in.nextLine();
 
         if (s.equalsIgnoreCase("1")) {
-            op1 = Input.operandInput("the");
+            op1 = InputLib.operandInput("the");
             avg = CalcLib.roundResult(op1);
             System.out.println("Average value is " + avg);
         } else if (s.equalsIgnoreCase("2")) {
-            op1 = Input.operandInput("first");
-            op2 = Input.operandInput("second");
+            op1 = InputLib.operandInput("first");
+            op2 = InputLib.operandInput("second");
             avg = CalcLib.roundResult((op1 + op2) / 2);
             System.out.println("Average of " + op1 + " and " + op2 + " is " + avg);
         } else if (s.equalsIgnoreCase("0")) {
