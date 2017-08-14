@@ -1,8 +1,9 @@
 package hillel.hometask.utils;
 
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
-import hillel.hometask.utils.CalcLib;
 
 
 public class ArrayLib {
@@ -31,6 +32,27 @@ public class ArrayLib {
         System.out.println("");
         return array;
     }
+
+    //Random filed with int from -20 to 20 numbers array creation
+    public static void createRandArray(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                array[i][j] = (int) (-21 + (20 + 20 + 1) * Math.random());
+                System.out.print(" " + array[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+        System.out.println("");
+    }
+
+    public static int[] createRandomArray(int[] array, int value) {
+        Random rand = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (-value + 1 + (value+value +1) * Math.random());
+        }
+        return array;
+    }
+
 
     private static int inputColumnsToSwap(String column, int columnsCount) {
         Scanner in = new Scanner(System.in);
@@ -76,6 +98,13 @@ public class ArrayLib {
         System.out.println();
     }
 
+    public static void arrayOut(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + "\t");
+        }
+        System.out.println();
+    }
+
     //Returns sum of array columns
     public static int getArrayColumnsSum(int[][] arr, int j, int rowsCount) {
         int sum = 0;
@@ -94,18 +123,6 @@ public class ArrayLib {
             }
         }
         return maxSum;
-    }
-
-    //Random filleld with int from -10 to 10 numbers array creation
-    public static void createRandArray(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                array[i][j] = (int) (-21 + (20 + 20 + 1) * Math.random());
-                System.out.print(" " + array[i][j] + " ");
-            }
-            System.out.println(" ");
-        }
-        System.out.println("");
     }
 
     //Returns sum of all array elements
@@ -185,5 +202,70 @@ public class ArrayLib {
             arr2[(arr.length - 1) - i] = arr[i];
         }
         return arr2;
+    }
+
+    public static int[] doBubbleSort(int[] array) {
+        for (int i = array.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (array[j] > array[j + 1]) {
+                    int t = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = t;
+                }
+            }
+        }
+        return array;
+    }
+
+    public static int[] doInsertionSort(int[] array) {
+        int tmp, j;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                tmp = array[i + 1];
+                array[i + 1] = array[i];
+                j = i;
+                while (j > 0 && tmp < array[j - 1]) {
+                    array[j] = array[j - 1];
+                    j--;
+                }
+                array[j] = tmp;
+            }
+        }
+        return array;
+    }
+
+    public static int doBinarySearch(int[] array, int x) {
+        int index = -1;
+        if (array != null) {
+            int first = 0, last = array.length, mid;
+            while (first < last) {
+                mid = (first + last) / 2;
+                if (x == array[mid]) {
+                    index = mid;
+                    break;
+                } else if (x < array[mid]) {
+                    last = mid;
+                } else {
+                    first = mid + 1;
+                }
+            }
+        }
+        return index;
+    }
+
+    public static int doRecursiveBinSearch(int[] array, int first, int last, int x) {
+        int index;
+        if (first > last)
+            index = -1;
+        else {
+            int mid = (first + last) / 2;
+            if (x == array[mid])
+                index = mid;
+            else if (x < array[mid])
+                index = doRecursiveBinSearch(array, first, mid - 1, x);
+            else
+                index = doRecursiveBinSearch(array, mid + 1, last, x);
+        }
+        return index;
     }
 }
