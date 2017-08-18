@@ -8,6 +8,8 @@ package hillel.hometask.ht09;
 import hillel.hometask.utils.GeometryLib;
 import hillel.hometask.utils.InputLib;
 
+import java.util.Arrays;
+
 public class RectnglePointMainClass {
 
     public static void main(String[] args) {

@@ -63,4 +63,13 @@ public class InputLib {
         return Integer.parseInt(posIntValue);
     }
 
+    public static int inputPositiveIntValueInterval(String s, int low, int hi){
+        String posIntValue;
+        do {
+            System.out.println(s);
+            posIntValue = in.next();
+        } while (!CalcLib.isInt(posIntValue) || !CalcLib.isPositive(posIntValue) || Integer.valueOf(posIntValue) < low || Integer.valueOf(posIntValue) > hi);
+        return Integer.parseInt(posIntValue);
+    }
+
 }
