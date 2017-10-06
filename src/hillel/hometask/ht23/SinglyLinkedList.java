@@ -1,28 +1,17 @@
 package hillel.hometask.ht23;
 
-import java.util.NoSuchElementException;
+/*
+  Реализовать односвязный список (SinglyLinkedList) для типа данных String.
+*/
 
 public class SinglyLinkedList {
-    /*
-    Реализовать односвязный список (SinglyLinkedList) для типа данных String.
-     */
+
     private Node head;
     private int size;
 
 
     public SinglyLinkedList() {
         head = null;
-    }
-
-    public SinglyLinkedList(Node head) {
-        this.head = head;
-        size = 0;
-    }
-
-
-    public SinglyLinkedList(String headData) {
-        head = new Node(headData);
-        size = 0;
     }
 
     public int getSize() {
@@ -69,7 +58,6 @@ public class SinglyLinkedList {
         size++;
     }
 
-    //search
     private Node getNode(int index) {
 
         if ( index > size ) {
@@ -127,19 +115,6 @@ public class SinglyLinkedList {
                 return;
             }
     }
-
-
-//    private void removeLast(String data) {
-//        int lastOccurrence = -1;
-//        Node x = head;
-//
-//        for (int i = 0; i < size; i++, x = x.getNext())
-//            if (x.getData().equals(data))
-//                lastOccurrence = i;
-//
-//        if (lastOccurrence != -1)
-//            remove(lastOccurrence);
-//    }
 
 
     public void remove(int index) {
@@ -215,4 +190,3 @@ public class SinglyLinkedList {
     }
 
 }
-
